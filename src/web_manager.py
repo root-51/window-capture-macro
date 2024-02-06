@@ -9,10 +9,29 @@ chrome_options = Options()
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 driver = webdriver.Chrome(options=chrome_options)
 
-def accessWebsite(url:str)->None:
+def access_website(url:str)->None:
     try:
         driver.get(url)
     except Exception as e:
         print(f'Fail to access website(${url}) : ')
         print(e)
+
+class Attribute(Enum):
+    ID = "id"
+    XPATH = "xpath"
+    LINK_TEXT = "link text"
+    PARTIAL_LINK_TEXT = "partial link text"
+    NAME = "name"
+    TAG_NAME = "tag name"
+    CLASS_NAME = "class name"
+    CSS_SELECTOR = "css selector"
+
+def get_element(attribute:Attribute, value:str)-> object:
+    try:
+        target = driver.find_element(by=attribute.value,value=value)
+        return target
+    except Exception as e:
+        print(f'Fail to find element(${value}):e')
+        return None
+
 
