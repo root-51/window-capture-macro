@@ -34,4 +34,5 @@ def get_element(attribute:Attribute, value:str)-> object:
         print(f'Fail to find element(${value}):e')
         return None
 
-
+def click_element(element:object):
+    element.click()
