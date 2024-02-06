@@ -17,3 +17,12 @@ def move_mouse_to(target:MousePoint, time:float)->None:
 
 def drag_mouse_to(target:MousePoint, time:float)-> None:
     input_device.dragTo(target.x, target.y, time)
+
+def click_left_button():
+    input_device.click()
+
+def press_key(key:str):
+    input_device.press(key)
+
+def press_hotkey(first_key:str, secod_key: str):
+    input_device.hotkey(first_key, secod_key)
