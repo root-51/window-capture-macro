@@ -14,3 +14,6 @@ def capture_mouse_position()-> MousePoint:
     
 def move_mouse_to(target:MousePoint, time:float)->None:
     input_device.moveTo(target.x, target.y, time)
+
+def drag_mouse_to(target:MousePoint, time:float)-> None:
+    input_device.dragTo(target.x, target.y, time)
