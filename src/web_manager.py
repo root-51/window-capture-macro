@@ -36,3 +36,8 @@ def get_element(attribute:Attribute, value:str)-> object:
 
 def click_element(element:object):
     element.click()
+
+def get_page_source(filename:str):
+    html_content = driver.page_source
+    with open(filename+".html", "w", encoding="utf-8") as file:
+        file.write(html_content)
